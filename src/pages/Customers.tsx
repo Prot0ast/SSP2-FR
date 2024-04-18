@@ -5,25 +5,6 @@ import { Customer, Plan } from "../types";
 import './Page.css';
 
 export function Customers(){
-    // fetch("https://localhost:5001/api/Customer").then(function(response){
-    //     return response.json();
-    // }).then(function(customers){
-    //     let placeholder = document.querySelector("#data-output");
-    //     let out = "";
-    //     for(let customer of customers){
-    //         out += `
-    //         <tr>
-    //             <td>${customer.id}</td>
-    //             <td>${customer.fullName}</td>
-    //             <td>${customer.email}</td>
-    //             <td>${customer.plans}</td>
-    //             <td><a className='btn btn-info' href="/Customers/CustomerId">View</a></td>
-    //         </tr>
-    //         `;
-    //     }
-    //     placeholder!.innerHTML = out;
-    // })
-
     const [customers, setCustomers] = useState(new Array<Customer>);
 
     let newCustomer = {id: "", fullName: "", email: ""}

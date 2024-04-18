@@ -16,10 +16,7 @@ const getAllCustomers = async () => {
 };
 
 const getCustomerById = async (id: string) => {
-  let customer = await fetch('https://localhost:5001/api/Customer/${id}');
-  let resp = await customer.json();
-  return resp;
-  // return await http.get<Customer>(`/Customer/${id}`);
+  return await http.get<Customer>(`/Customer/${id}`);
 };
 
 export { getCustomerById , getAllCustomers};
