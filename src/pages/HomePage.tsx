@@ -35,7 +35,7 @@ export function HomePage() {
       <body>
         <br />
         <h4 className="centerText">New User? Register Here!</h4>
-        <form action="https://localhost:5001/api/Customer/" method="post" className="dim_gray" encType="application/json">
+        <form action="https://localhost:5001/api/Authentication" method="post" className="dim_gray" encType="application/json">
             <div className="container">
               <label htmlFor="firstName" className="white_text">First Name:</label>
               <input type="text" className="form-control" id="firstName" name="firstName" placeholder="Enter First Name here..." required/>
