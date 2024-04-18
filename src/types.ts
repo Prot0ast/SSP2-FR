@@ -1,13 +1,26 @@
-export interface Student {
-    id: string;
-    fullName: string;
-    email: string;
+export interface Device { 
+    id: string
+    custId: string
+    name: string
+    number: string
 }
 
-export interface StudentDetailResponse {
-    id: string,
-    firstMidName: string,
-    lastName: string,
-    email: string,
-    enrollmentDate: string
+export interface CustomerPlan{
+    id: string
+    plans: string[]
+}
+
+export interface Plan{
+  GUID: string;
+  id: string;
+  name: string;
+  price: number;
+  deviceLimit: number;
+}
+
+export interface Customer {
+  id: string;
+  fullName: string;
+  email: string;
+  plans: Plan[];
 }

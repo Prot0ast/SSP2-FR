@@ -1,7 +1,9 @@
+import "./Component.css";
+
 export function Footer() {
-    return (
-        <footer>
-            <p>Copyright 2024 SkillStorm Commercial Services LLC</p>
-        </footer>
-    )
+  return (
+    <footer className="footer">
+        <span>Copyright 2024 Quantum Com LLC *not a real company*</span>
+    </footer>
+  );
 }

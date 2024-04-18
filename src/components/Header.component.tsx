@@ -1,27 +1,30 @@
-import React from 'react';
-
+import React from "react";
+import './Component.css'
+import './QuantumCom.png'
 
 export class Header extends React.Component {
-    private userName: string = "John Doe";
+  componentDidMount(): void {
+    // Normally used to make API calls or fetch data
+  }
 
-    componentDidMount(): void {
-        // Normally used to make API calls or fetch data
-    }
+  componentWillUnmount(): void {
+    // Clean up code: remove event listeners, cancel network requests, etc.
+  }
 
-    componentWillUnmount(): void {
-        // Clean up code: remove event listeners, cancel network requests, etc.
-    }
-
-    render() {
-        return (
+  render() {
+    return (
+      <div>
+        <head>
+          <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossOrigin="anonymous"/>
+          </head>
+        <header>
             <div>
-                <header>
-                    <nav className="navbar navbar-expand-md navbar-dark bg-dark">
-                        <div><span>Hello, {this.userName}!</span></div>
-                        <div><a href="https://www.google.com" className="navbar-brand">Google</a></div>
-                    </nav>
-                </header>
+            <img className="centerImg" src="QuantumCom.png" alt="QuantumCom logo" />
+            <div className="night night_text">:)</div>
+            <br />
             </div>
-        )
-    }
+        </header>
+      </div>
+    );
+  }
 }
