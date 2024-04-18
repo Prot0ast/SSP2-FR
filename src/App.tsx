@@ -23,7 +23,6 @@ function App() {
           <Route path="/Device" element={<Devices />}/>
           <Route path="/Device/:deviceId" element={<DeviceDetails/>}/>
           <Route path="/CustomerPlan" element={<CustomerPlans/>}/>
-     
         </Routes>
       </BrowserRouter>
     </ThemeContext.Provider>
