@@ -6,27 +6,6 @@ import { Footer, Header } from "../components";
 import './Page.css';
 
 export function CustomerDetails() {
-  // fetch("https://localhost:5001/api/Customer/${customerId}") // <- how to pass customer id???
-  // .then(function(response){
-  //   return response.json();
-  // }).then(function(customer){
-  //   let placeholder = document.querySelector("#data-output");
-  //   let out = "";
-  //   for(let c of customer){
-  //     out += `
-  //     <tr>
-  //       <td>${c.id}</td>
-  //       <td>${c.fullName}</td>
-  //       <td>${c.email}</td>
-  //       <td>${c.plans}</td>
-  //       <td>${c.cardType}</td>
-  //       <td>${c.devices}</td>
-  //       <td>${c.fullName}</td>
-  //     </tr>
-  //     `;
-  //   }
-  //   placeholder!.innerHTML = out;
-  // })
   const [customer, setCustomer] = React.useState({
     id: "",
     fullName: "",
@@ -54,7 +33,7 @@ export function CustomerDetails() {
       <Header />
       <h2 className="centerText">Customer Details</h2>
       <a className="btn-btn-primary btn-lg" href="/">Home</a>
-      <a className='btn btn-info' href="/Customer/$:bill"></a>
+      <a className='btn btn-info' href="/Customer/$:bill">Bill Breakdown</a>
       <dl>
         <dt className="centerText">ID</dt>
         <dd>{customer.id}</dd>
