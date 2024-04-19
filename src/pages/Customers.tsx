@@ -1,7 +1,7 @@
 import { useState, useEffect} from "react";
 import { Footer, Header, CustomerTableRow } from "../components";
 import {getAllCustomers } from '../services/customerService';
-import { Customer, Plan } from "../types";
+import { Customer} from "../types";
 import './Page.css';
 
 export function Customers(){
@@ -28,16 +28,14 @@ export function Customers(){
                         <th className = "rose_quartz">Full Name</th>
                         <th className = "rose_quartz">Email</th>
                         <th>Details</th>
-                        {/* <th>Plans</th> */}
                     </tr>
                 </thead>
-            {/* <tbody id="data-output">
-                
-            </tbody> */}
+            
             <tbody className = "rose_quartz">
             {customers.map((customer) => (<CustomerTableRow key={customer.id} customer={customer} />))}
             </tbody>
             </table>
+            <p className="flexbox"></p>
         </div>
         <Footer />
         </>

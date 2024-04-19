@@ -28,7 +28,7 @@ export function DeviceDetails(){
     function register(){
         var printThis = "";
         for(var i = 0; i < device.length; i++){
-            printThis += "Device " + i + " Name: " + device[i].name + " Device " + i +" Number: " + device[i].number + "\n";
+            printThis += "||| Device" + i + " Name: " + device[i].name + " Device " + i +" Number: " + device[i].number + " |||";
         }
         return printThis;
     }
@@ -36,13 +36,16 @@ export function DeviceDetails(){
     return(
         <>
         <Header />
-        <div className="centerText">
+        <div className="centerText rose_quartz">
+            
+            <a className="btn btn-info button white btn-lg" href="/">Home</a>
+            <a className='btn btn-info button white btn-lg' href="/Device">Back To Devices</a>
             <h2>Customer Device(s) Details</h2>
-            <a className="btn btn-info button rose_quartz btn-lg" href="/">Home</a>
-            <a className='btn btn-info button rose_quartz btn-lg' href="/Device">Devices</a>
-            <dl>
+            <dl className="jet white_text">
+                <br />
                 {register()}
             </dl>
+            <p className="flexbox">Too blank here? Buy more devices. :)</p>
         </div>
         <Footer />
         </>

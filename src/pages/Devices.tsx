@@ -17,7 +17,8 @@ export function Devices() {
     return(
         <>
         <Header />
-        <div className="container">
+        <div className="rose_quartz centerText">
+            <a className="btn btn-info button white btn-lg" href="/">Home</a>
             <h2>Devices</h2>
             <table className="table table-responsive table-striped table-hover">
                 <thead>

@@ -27,10 +27,10 @@ export function HomePage() {
     <>
       <Header />
       <div className="centerText">
-        <a className="btn btn-info button rose_quartz btn-lg" href="/Customers">View Info</a>
+        <a className="btn btn-info button rose_quartz btn-lg" href="/Customers">Customer View</a>
       </div>
         <br />
-        <h4 className="centerText">New User? Register Here!</h4>
+        <h4 className="centerText">New User? Register Below!</h4>
         <form action="https://localhost:5001/api/Customer/" method="post" className="dim_gray" encType="application/json">
             <div className="container">
               <label htmlFor="firstName" className="white_text">First Name:</label>
@@ -61,7 +61,7 @@ export function HomePage() {
             </div>
             <div className="centerText">
               <br />
-              <button className="btn btn-success">Submit</button>
+              <button className="btn btn-success">Register</button>
             </div>
         </form>
 

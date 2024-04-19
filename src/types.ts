@@ -11,11 +11,12 @@ export interface CustomerPlan{
 }
 
 export interface Plan{
-  GUID: string;
-  id: string;
-  name: string;
-  price: number;
-  deviceLimit: number;
+  GUID: string
+  id: string
+  name: string
+  price: number
+  deviceLimit: number
+  
 }
 
 export interface Customer {
@@ -25,6 +26,6 @@ export interface Customer {
   cardType: string;
   cardNumber: string;
   ccv: number;
-  plans?: Plan;
-  devices?: Device;
+  plans?: Plan[];
+  devices?: Device[];
 }
