@@ -30,7 +30,6 @@ export function DeviceDetails(){
         <div className="centerText">
             <h2>Customer Device Details</h2>
             <a className="btn btn-info button rose_quartz btn-lg" href="/">Home</a>
-            <a className='btn btn-info button rose_quartz btn-lg' href="/Customer/$:bill">Bill Breakdown</a>
             <a className='btn btn-info button rose_quartz btn-lg' href="/Device">Devices</a>
             <dl>
                 <dt>ID</dt>

@@ -6,28 +6,29 @@ import { Footer } from "../components/Footer.component";
 import { Header } from "../components/Header.component";
 import './Pallete.css';
 import './Page.css';
+import { Customer } from "../types";
 
 export function CustomerDetails() {
-  const [customer, setCustomer] = React.useState({
+  const [customer, setCustomer] = React.useState<Customer>({
     id: "",
     fullName: "",
     email: "",
     cardType: "",
     cardNumber: "",
     ccv: 0,
-    // plans: {
-    //   GUID:"",
-    //   id:"",
-    //   name: "",
-    //   price:"",
-    //   deviceLimit: ""
-    // },
-    // devices:{
-    //   id: "",
-    //   custId: "",
-    //   name: "",
-    //   number: ""
-    // }
+    plans: {
+      GUID:"",
+      id:"",
+      name: "",
+      price: 0,
+      deviceLimit: 0,
+    },
+    devices:{
+      id: "",
+      custId: "",
+      name: "",
+      number: ""
+    }
   });
 
   const { customerId } = useParams();
@@ -49,7 +50,6 @@ export function CustomerDetails() {
       <div className="centerText">
       <h2 className="centerText">Customer Details for {customer.fullName}</h2>
       <a className="btn btn-info button rose_quartz btn-lg" href="/">Home</a>
-      <a className='btn btn-info button rose_quartz btn-lg' href="/Customer/$:bill">Bill Breakdown</a>
       <a className='btn btn-info button rose_quartz btn-lg' href="/Device">Devices</a>
       </div>
       <dl>
@@ -59,7 +59,12 @@ export function CustomerDetails() {
         <dt>Card Type: {customer.cardType}</dt>
         <dt>Card Number: {customer.cardNumber}</dt>
         <dt>CVV: {customer.ccv}</dt>
-
+        <dt>Plan ID:{customer.plans?.id}</dt>
+        <dt>Plan Name:{customer.plans?.name}</dt>
+        <dt>Plan Price:{customer.plans?.price}</dt>
+        <dt>Plan Device Limit:{customer.plans?.deviceLimit}</dt>
+        <dt>Device Name:{customer.devices?.name}</dt>
+        <dt>Device Number:{customer.devices?.number}</dt>
       </dl>
             {/* <tbody id="data-output"></tbody> */}
     </div>
