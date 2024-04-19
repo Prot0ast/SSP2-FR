@@ -9,9 +9,6 @@ export const http = axios.create({
 });
 
 const getAllCustomers = async () => {
-  // let customers = await fetch('https://localhost:5001/api/Customer');
-  // let resp =  await customers.json();
-  // return resp;
   return await http.get<Array<Customer>>('/Customer');
 };
 

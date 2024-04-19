@@ -21,7 +21,7 @@ function App() {
           <Route path="/Customers/:customerId" element={<CustomerDetails />} />
           <Route path="/Customer/:Bill" element={<BillBreakdown/>}/>
           <Route path="/Device" element={<Devices />}/>
-          <Route path="/Device/:deviceId" element={<DeviceDetails/>}/>
+          <Route path="/Device/Customer/:custId" element={<DeviceDetails/>}/>
           <Route path="/CustomerPlan" element={<CustomerPlans/>}/>
         </Routes>
       </BrowserRouter>

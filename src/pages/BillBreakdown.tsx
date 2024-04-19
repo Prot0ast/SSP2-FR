@@ -23,14 +23,16 @@ export function BillBreakdown() {
     
     return(
         <>
+        <Header />
             <div className="centerText">
-            <Header />
+            
                 <h2>Monthly Bill Breakdown</h2>
+                <a className="btn btn-info button rose_quartz btn-lg" href="/">Home</a>
                 <tbody>
-                    {/* {plan.map((plan)=> (<PlanTableRow key={plan.id} plan={plan} />))} */}
+                    {plan.map((plan)=> (<PlanTableRow key={plan.id} plan={plan} />))}
                 </tbody>
             </div>
-            <Footer />
+        <Footer />
         </>
     );
 }

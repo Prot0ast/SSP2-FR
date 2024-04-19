@@ -9,5 +9,13 @@
 
 button{
     margin: 5px;
+    border-color:black;
+    color:black;
+}
+
+.button:hover{
+    background-color:black;
+    transition: 0.7s;
+    color: white;
 }
 
