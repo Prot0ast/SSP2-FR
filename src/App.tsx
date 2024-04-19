@@ -19,7 +19,7 @@ function App() {
           <Route path="/Customers" element={<Customers />}/>
           <Route path="/Customers/:customerId" element={<CustomerDetails />} />
           <Route path="/Device" element={<Devices />}/>
-          <Route path="/Device/Customer/:custId" element={<DeviceDetails/>}/>
+          <Route path="/Device/:custId" element={<DeviceDetails/>}/>
           <Route path="/CustomerPlan" element={<CustomerPlans/>}/>
         </Routes>
       </BrowserRouter>

@@ -4,43 +4,48 @@ import { getDeviceById } from "../services/deviceService";
 import { Footer } from "../components/Footer.component";
 import { Header } from "../components/Header.component";
 import './Page.css';
+import { Device } from "../types";
 
 export function DeviceDetails(){
-    const[device, setDevice] = React.useState({
+    const[device, setDevice] = React.useState<Device[]>([{
         id: '',
         custId: '',
         name: '',
         number: ''
-    });
+    }]);
 
-    const{deviceId} = useParams();
+    const{ custId } = useParams();
 
     React.useEffect(() => {
-        if(!deviceId){
+        if(!custId){
             return;
         }
-        getDeviceById(device.id).then(response =>{
+        getDeviceById(custId).then(response =>{
             setDevice(response.data)
         });
-    }, [setDevice, deviceId])
+    }, [setDevice, custId])
+
+    function register(){
+        var printThis = "";
+        for(var i = 0; i < device.length; i++){
+            printThis += "||| Device" + i + " Name: " + device[i].name + " Device " + i +" Number: " + device[i].number + " |||";
+        }
+        return printThis;
+    }
 
     return(
         <>
         <Header />
-        <div className="centerText">
-            <h2>Customer Device Details</h2>
-            <a className="btn btn-info button rose_quartz btn-lg" href="/">Home</a>
-            <a className='btn btn-info button rose_quartz btn-lg' href="/Device">Devices</a>
-            <dl>
-                <dt>ID</dt>
-                <dd>{device.id}</dd>
-                <dt>Customers ID</dt>
-                <dd>{device.custId}</dd>
-                <dt>Device Name</dt>
-                <dd>{device.name}</dd>
-                <dt>Device Phone Number</dt>
-                <dd>{device.number}</dd>
+        <div className="centerText rose_quartz">
+            
+            <a className="btn btn-info button white btn-lg" href="/">Home</a>
+            <a className='btn btn-info button white btn-lg' href="/Device">Back To Devices</a>
+            <h2>Customer Device(s) Details</h2>
+            <dl className="jet white_text">
+                <br />
+                {register()}
             </dl>
+            <p className="flexbox">Too blank here? Buy more devices. :)</p>
         </div>
         <Footer />
         </>

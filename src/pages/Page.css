@@ -2,6 +2,9 @@
     text-align: center;
 }
 
+.leftText{
+    text-align: left;
+}
 
 .container{
     margin-top: 20px;
@@ -17,5 +20,13 @@ button{
     background-color:black;
     transition: 0.7s;
     color: white;
+}
+
+.flexbox {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin: 10px;
+    min-height: 1000px;
 }
 

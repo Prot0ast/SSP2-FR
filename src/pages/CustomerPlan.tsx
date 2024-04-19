@@ -1,6 +1,8 @@
 import React from "react";
 import { Footer } from "../components/Footer.component";
 import { Header } from "../components/Header.component";
+import './Pallete.css';
+import './Page.css';
 
 export function CustomerPlans(){
     fetch("https://localhost:5001/api/CustomerPlan")
@@ -25,8 +27,9 @@ export function CustomerPlans(){
     return(
         <>
         <Header/>
-        <div className="container">
-            <h2>Devices</h2>
+        <div className="centerText rose_quartz">
+        <a className="btn button white btn-lg" href="/">Home</a>
+            <h2 className="centerText">Plans</h2>
             <table className='table table-responsive table-striped table-hover'>
                 <thead>
                     <tr>
@@ -38,9 +41,9 @@ export function CustomerPlans(){
                 <tbody id="data-output">
                 </tbody>
             </table>
+            <p className="flexbox"></p>
         <Footer/>
         </div>
-        
         </>
     )
 }

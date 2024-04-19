@@ -8,7 +8,7 @@ interface DeviceTableRowProps {
 }
 
 export function DeviceTableRow({device}: DeviceTableRowProps): JSX.Element{
-    let deviceLink = `/Device/Customer/${device.custId}`;
+    let deviceLink = `/Device/${device.custId}`;
 
     return(
         <tr>
