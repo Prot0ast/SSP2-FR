@@ -5,24 +5,25 @@ import './Pallete.css';
 import './Page.css';
 
 export function CustomerPlans(){
-    fetch("https://localhost:5001/api/CustomerPlan")
-    .then(function(response){
-        return response.json();
-    })
-    .then(function(custPlans){
-        let placeholder = document.querySelector("#data-output");
-        let out = "";
-        for(let customerPlan of custPlans){
-            out += `
-            <tr>
-                <td>${customerPlan.id}</td>
-                <td>${customerPlan.plans}</td>
-                <td><a className = 'btn btn-info' href="https://localhost:5001/api/CustomerPlan/${customerPlan.id}">Details</a></td>
-            </tr>
-            `;
-        }
-        placeholder!.innerHTML = out;
-    })
+    // fetch("https://localhost:5001/api/CustomerPlan")
+    // .then(function(response){
+    //     return response.json();
+    // })
+    // .then(function(custPlans){
+    //     let placeholder = document.querySelector("#data-output");
+    //     let out = "";
+    //     for(let customerPlan of custPlans){
+    //         out += `
+    //         <tr>
+    //             <td>${customerPlan.id}</td>
+    //             <td>${customerPlan.custId}</td>
+    //             <td>${customerPlan.plans}</td>
+    //             <td><a className = 'btn btn-info' href="https://localhost:5001/api/CustomerPlan/${customerPlan.id}">Details</a></td>
+    //         </tr>
+    //         `;
+    //     }
+    //     placeholder!.innerHTML = out;
+    // })
    
     return(
         <>
@@ -39,6 +40,7 @@ export function CustomerPlans(){
                         <th></th>
                     </tr>
                 </thead>
+                <p className="white_text jet">*refer to Swagger API*</p>
                 <tbody id="data-output">
                 </tbody>
             </table>
