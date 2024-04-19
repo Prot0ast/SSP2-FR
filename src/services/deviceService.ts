@@ -13,7 +13,7 @@ const getAllDevices = async() => {
 }
 
 const getDeviceById = async (custId: string) => {
-    return await http.get<Device>(`/Device/Customer/${custId}`)
+    return await http.get<Device[]>(`/Device/${custId}`)
 };
 
 export {getDeviceById, getAllDevices}

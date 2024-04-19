@@ -4,25 +4,27 @@ import { getDeviceById } from "../services/deviceService";
 import { Footer } from "../components/Footer.component";
 import { Header } from "../components/Header.component";
 import './Page.css';
+import { Device } from "../types";
 
 export function DeviceDetails(){
-    const[device, setDevice] = React.useState({
+    const[device, setDevice] = React.useState<Device[]>([{
         id: '',
         custId: '',
         name: '',
         number: ''
-    });
+    }]);
 
-    const{deviceId} = useParams();
+    const{ custId } = useParams();
 
     React.useEffect(() => {
-        if(!deviceId){
+        if(!custId){
             return;
         }
-        getDeviceById(device.id).then(response =>{
+        getDeviceById(custId).then(response =>{
             setDevice(response.data)
         });
-    }, [setDevice, deviceId])
+    }, [setDevice, custId])
+
 
     return(
         <>
@@ -32,14 +34,7 @@ export function DeviceDetails(){
             <a className="btn btn-info button rose_quartz btn-lg" href="/">Home</a>
             <a className='btn btn-info button rose_quartz btn-lg' href="/Device">Devices</a>
             <dl>
-                <dt>ID</dt>
-                <dd>{device.id}</dd>
-                <dt>Customers ID</dt>
-                <dd>{device.custId}</dd>
-                <dt>Device Name</dt>
-                <dd>{device.name}</dd>
-                <dt>Device Phone Number</dt>
-                <dd>{device.number}</dd>
+                Device Name: {device[0].name}
             </dl>
         </div>
         <Footer />
