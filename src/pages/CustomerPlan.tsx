@@ -29,6 +29,7 @@ export function CustomerPlans(){
         <Header/>
         <div className="centerText rose_quartz">
         <a className="btn button white btn-lg" href="/">Home</a>
+        <a className="btn button white btn-lg" href="/Customers">Customer View</a>
             <h2 className="centerText">Plans</h2>
             <table className='table table-responsive table-striped table-hover'>
                 <thead>

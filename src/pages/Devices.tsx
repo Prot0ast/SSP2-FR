@@ -19,6 +19,7 @@ export function Devices() {
         <Header />
         <div className="rose_quartz centerText">
             <a className="btn btn-info button white btn-lg" href="/">Home</a>
+            <a className="btn btn-info button white btn-lg" href="/Customers">Customer View</a>
             <h2>Devices</h2>
             <table className="table table-responsive table-striped table-hover">
                 <thead>

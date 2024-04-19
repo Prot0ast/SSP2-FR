@@ -64,6 +64,7 @@ export function CustomerDetails() {
     <div>
       <div className="centerText rose_quartz">
       <a className="btn btn-info button white btn-lg" href="/">Home</a>
+      <a className="btn btn-info button white btn-lg" href="/Customers">Customer View</a>
       <a className='btn btn-info button white btn-lg' href="/Device">Devices</a>
       <a className="btn btn-info button white btn-lg" href="/CustomerPlan">Plans</a>
       <h2 className="centerText">Customer Details for {customer.fullName}</h2>

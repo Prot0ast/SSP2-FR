@@ -39,6 +39,7 @@ export function DeviceDetails(){
         <div className="centerText rose_quartz">
             
             <a className="btn btn-info button white btn-lg" href="/">Home</a>
+            <a className="btn btn-info button white btn-lg" href="/Customers">Customer View</a>
             <a className='btn btn-info button white btn-lg' href="/Device">Back To Devices</a>
             <h2>Customer Device(s) Details</h2>
             <dl className="jet white_text">
