@@ -22,4 +22,9 @@ export interface Customer {
   id: string;
   fullName: string;
   email: string;
+  cardType: string;
+  cardNumber: string;
+  ccv: number;
+  plans?: Plan;
+  devices?: Device;
 }

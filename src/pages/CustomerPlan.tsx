@@ -1,4 +1,6 @@
 import React from "react";
+import { Footer } from "../components/Footer.component";
+import { Header } from "../components/Header.component";
 
 export function CustomerPlans(){
     fetch("https://localhost:5001/api/CustomerPlan")
@@ -22,6 +24,7 @@ export function CustomerPlans(){
    
     return(
         <>
+        <Header/>
         <div className="container">
             <h2>Devices</h2>
             <table className='table table-responsive table-striped table-hover'>
@@ -35,6 +38,7 @@ export function CustomerPlans(){
                 <tbody id="data-output">
                 </tbody>
             </table>
+        <Footer/>
         </div>
         
         </>

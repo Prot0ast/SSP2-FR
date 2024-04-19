@@ -1,42 +1,48 @@
 import React from "react";
+import { useParams } from "react-router-dom";
+import { getDeviceById } from "../services/deviceService";
+import { Footer } from "../components/Footer.component";
+import { Header } from "../components/Header.component";
+import './Page.css';
 
 export function DeviceDetails(){
-    fetch("https://localhost:5001/api/Device/")
-    .then(function(response){
-        return response.json();
-    })
-    .then(function(devices){
-        let placeholder = document.querySelector("#data-output");
-        let out = "";
-        for(let device of devices){
-            out += `
-            <tr>
-                <td>${device.id}</td>
-                <td>${device.custId}</td>
-                <td>${device.name}</td>
-                <td>${device.number}</td>
-                <td><a className = 'btn btn-info' href="/}">Home</a></td>
-            </tr>
-            `;
+    const[device, setDevice] = React.useState({
+        id: '',
+        custId: '',
+        name: '',
+        number: ''
+    });
+
+    const{deviceId} = useParams();
+
+    React.useEffect(() => {
+        if(!deviceId){
+            return;
         }
-        placeholder!.innerHTML = out;
-    })
+        getDeviceById(device.id).then(response =>{
+            setDevice(response.data)
+        });
+    }, [setDevice, deviceId])
+
     return(
-        <div className="container">
-        <h2>Devices</h2>
-        <table className='table table-responsive table-striped table-hover'>
-            <thead>
-                <tr>
-                    <th>ID</th>
-                    <th>Customer ID</th>
-                    <th>Name</th>
-                    <th>Number</th>
-                    <th></th>
-                </tr>
-            </thead>
-            <tbody id="data-output">
-            </tbody>
-        </table>
-    </div>
+        <>
+        <Header />
+        <div className="centerText">
+            <h2>Customer Device Details</h2>
+            <a className="btn btn-info button rose_quartz btn-lg" href="/">Home</a>
+            <a className='btn btn-info button rose_quartz btn-lg' href="/Device">Devices</a>
+            <dl>
+                <dt>ID</dt>
+                <dd>{device.id}</dd>
+                <dt>Customers ID</dt>
+                <dd>{device.custId}</dd>
+                <dt>Device Name</dt>
+                <dd>{device.name}</dd>
+                <dt>Device Phone Number</dt>
+                <dd>{device.number}</dd>
+            </dl>
+        </div>
+        <Footer />
+        </>
     )
 }

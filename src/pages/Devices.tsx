@@ -1,32 +1,25 @@
 import React from "react"
+import { Device } from "../types"
+import { getAllDevices } from "../services/deviceService";
+import { DeviceTableRow } from "../components/DeviceTableRow";
+import { Footer } from "../components/Footer.component";
+import { Header } from "../components/Header.component";
 export function Devices() {
-    fetch("https://localhost:5001/api/Device")
-    .then(function(response){
-        return response.json();
-    })
-    .then(function(devices){
-        let placeholder = document.querySelector("#data-output");
-        let out = "";
-        for(let device of devices){
-            out += 
-            `
-            <tr>
-                <td>${device.id}</td>
-                <td>${device.custId}</td>
-                <td>${device.name}</td>
-                <td>${device.number}</td>
-                <td><a className = 'btn btn-info' href="https://localhost:5001/api/Device/${device.id}">Details</a></td>
-            </tr>
-            `;
-        }
-        placeholder!.innerHTML = out;
-    })
-   
+    const [devices, setDevices] = React.useState(new Array<Device>());
+
+    let newDevice = {id: "", custId: "", name: "", number: ""}
+
+    React.useEffect(() => {
+        getAllDevices().then(response => {
+            setDevices(response.data)
+        });
+    }, [setDevices])
     return(
         <>
+        <Header />
         <div className="container">
             <h2>Devices</h2>
-            <table className='table table-responsive table-striped table-hover'>
+            <table className="table table-responsive table-striped table-hover">
                 <thead>
                     <tr>
                         <th>ID</th>
@@ -36,11 +29,13 @@ export function Devices() {
                         <th></th>
                     </tr>
                 </thead>
-                <tbody id="data-output">
+                <tbody>
+                    {devices.map((devices) => (<DeviceTableRow key={devices.id} device={devices} />))}
                 </tbody>
             </table>
+        <Footer />
         </div>
-        
+
         </>
     )
 }
