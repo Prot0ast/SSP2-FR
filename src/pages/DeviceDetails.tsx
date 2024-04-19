@@ -25,16 +25,23 @@ export function DeviceDetails(){
         });
     }, [setDevice, custId])
 
+    function register(){
+        var printThis = "";
+        for(var i = 0; i < device.length; i++){
+            printThis += "Device " + i + " Name: " + device[i].name + " Device " + i +" Number: " + device[i].number + "\n";
+        }
+        return printThis;
+    }
 
     return(
         <>
         <Header />
         <div className="centerText">
-            <h2>Customer Device Details</h2>
+            <h2>Customer Device(s) Details</h2>
             <a className="btn btn-info button rose_quartz btn-lg" href="/">Home</a>
             <a className='btn btn-info button rose_quartz btn-lg' href="/Device">Devices</a>
             <dl>
-                Device Name: {device[0].name}
+                {register()}
             </dl>
         </div>
         <Footer />

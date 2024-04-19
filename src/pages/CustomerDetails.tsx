@@ -42,7 +42,6 @@ export function CustomerDetails() {
     });
   }, [setCustomer, customerId]);
 
-
   return (
     <>
     <Header />
@@ -57,8 +56,7 @@ export function CustomerDetails() {
         <dt>ID: {customer.id}</dt>
         <dt>Email: {customer.email}</dt>
         <dt>Card Type: {customer.cardType}</dt>
-        <dt>Card Number: {customer.cardNumber}</dt>
-        <dt>CVV: {customer.ccv}</dt>
+        <dt>Card Number: {customer.cardNumber.replace(/^(\D*\d{12})/,"#".repeat(12))}</dt>
         <dt>Plan ID:{customer.plans?.id}</dt>
         <dt>Plan Name:{customer.plans?.name}</dt>
         <dt>Plan Price:{customer.plans?.price}</dt>

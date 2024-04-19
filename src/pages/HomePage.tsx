@@ -12,10 +12,10 @@ export function HomePage() {
   React.useEffect(
     () => {
       // Side effect logic
-      console.log("Component mounted");
+      //console.log("Component mounted");
       return () => {
         // Cleanup logic
-        console.log("Component will unmount");
+        //console.log("Component will unmount");
       };
     },
     [
@@ -29,7 +29,6 @@ export function HomePage() {
       <div className="centerText">
         <a className="btn btn-info button rose_quartz btn-lg" href="/Customers">View Info</a>
       </div>
-      <body>
         <br />
         <h4 className="centerText">New User? Register Here!</h4>
         <form action="https://localhost:5001/api/Customer/" method="post" className="dim_gray" encType="application/json">
@@ -66,7 +65,6 @@ export function HomePage() {
             </div>
         </form>
 
-      </body>
       <Footer />
     </>
   );
